@@ -2,17 +2,12 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>hu.japy.dev.hibernate</groupId>
-	<artifactId>hibernate_example_envers</artifactId>
+	<artifactId>hibernate_example_locking</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<dependencies>
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-core</artifactId>
-			<version>4.3.10.Final</version>
-		</dependency>
-		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-envers</artifactId>
 			<version>4.3.10.Final</version>
 		</dependency>
 		<dependency>
@@ -48,7 +43,7 @@
 							<transformers>
 								<!-- sets the class containing the main method for start-up -->
 								<transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-									<mainClass>hibernate_example.envers.EnversMain</mainClass>
+									<mainClass>hibernate_example.locking.LockingMain</mainClass>
 								</transformer>
 							</transformers>
 						</configuration>
