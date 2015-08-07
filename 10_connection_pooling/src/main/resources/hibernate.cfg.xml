@@ -1,0 +1,45 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+
+	<session-factory>
+
+		<!-- SQL dialect -->
+		<property name="dialect">org.hibernate.dialect.H2Dialect</property>
+
+		<!-- Database connection settings -->
+<!-- 		<property name="connection.driver_class">org.h2.Driver</property> -->
+<!-- 		<property name="connection.url">jdbc:h2:file:./example;DB_CLOSE_DELAY=-1;MVCC=TRUE</property> -->
+<!-- 		<property name="connection.username">sa</property> -->
+<!-- 		<property name="connection.password" /> -->
+
+		<!-- JDBC connection pool (use the built-in) -->
+		<!-- <property name="connection.pool_size">1</property> -->
+		<!-- <property name="hibernate.connection.provider_class">org.hibernate.c3p0.internal.C3P0ConnectionProvider</property> -->
+<!-- 		<property name="hibernate.c3p0.min_size">1</property> -->
+<!-- 		<property name="hibernate.c3p0.max_size">19</property> -->
+<!-- 		<property name="hibernate.c3p0.timeout">120</property> -->
+<!-- 		<property name="hibernate.c3p0.max_statements">10</property> -->
+<!-- 		<property name="hibernate.connection.provider_class">org.hibernate.connection.ProxoolConnectionProvider</property> -->
+		<property name="hibernate.proxool.pool_alias">proxool</property>
+		<property name="hibernate.proxool.xml">proxool.xml</property>
+
+
+		<!-- Disable the second-level cache -->
+		<property name="cache.provider_class">org.hibernate.cache.internal.NoCacheProvider</property>
+
+		<!-- Echo all executed SQL to stdout -->
+		<property name="show_sql">true</property>
+
+		<!-- Drop and re-create the database schema on startup -->
+		<property name="hbm2ddl.auto">update</property>
+
+		<!-- The mapping information of entities -->
+		<!-- uncomment the group of f_example.locking.Book" /> -->
+		<mapping class="hibernate_example.pooling.Book" />
+
+	</session-factory>
+
+</hibernate-configuration>

@@ -1,0 +1,13 @@
+<proxool-config>
+	<proxool>
+		<alias>proxool</alias>
+		<driver-url>jdbc:h2:file:./example;DB_CLOSE_DELAY=-1;MVCC=TRUE</driver-url>
+		<driver-class>org.h2.Driver</driver-class>
+		<driver-properties>
+			<property name="user" value="sa"></property>
+			<property name="password" value=""></property>
+		</driver-properties>
+		<minimum-connection-count>10</minimum-connection-count>
+		<maximum-connection-count>20</maximum-connection-count>
+	</proxool>
+</proxool-config>
